@@ -2,20 +2,19 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println();
 
-        int ticketPrice = 3000;
+        int initialAmount = 300;
+        int replenishmentAmount = 1200;
 
-        System.out.println("Стоимость билета" + " " + ticketPrice + " " + "руб.");
-        System.out.println("У нас работает бонусная программа, по которой за каждые 20 рублей, потраченные на билет, начисляется 1 миля");
+        int bonus;
 
-        int valueOfMile = 20;
+        if (replenishmentAmount > 1000) {
+            bonus = replenishmentAmount / 100;
+        } else {
+            bonus = 0;
+        }
 
-        int bonusMiles = ticketPrice / valueOfMile;
-
-        System.out.println("Ваш бонус" + " " + bonusMiles + " " + "миль");
-
-
-
+        System.out.println("Общая сумма счета:" + " " + (initialAmount + replenishmentAmount + bonus) + " " + "руб.");
+        System.out.println("Бонусы:" + " " + bonus + " " + "руб.");
     }
 }
